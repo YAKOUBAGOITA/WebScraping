@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% block content %}
+        <!-- Account Area Start -->
+        <div class="account-area ptb-80">
+            <div class="container">
+                <div class="row">
+                    {% if page == 'login' %}
+                    <div class="col-sm-6 col-xs-12">
+                        <form method="POST" action="{% url 'login' %}" class="login-side">
+                            {% csrf_token %}
+                            <div class="login-reg">
+                                <h3>Login</h3>
+                                {% for field in login_form %}
+                                <div class="input-box mb-20">
+                                    <label class="control-label">{{field.label}}</label>
+                                    {{field}}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="frm-action">
+                                <div class="input-box tci-box">
+                                    <button style="background-color: brown;" class="btn-def btn2" type="submit">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {% else %}
+                    <div class="col-sm-6 col-xs-12 lr2">
+                        <form method="POST" action="{% url 'register' %}">
+                            {% csrf_token %}
+                            <div class="login-reg">
+                                <h3>Register</h3>
+                                {% for field in form %}
+                                <div class="input-box mb-20">
+                                    <label class="control-label">{{field.label}}</label>
+                                    {{ field }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="frm-action">
+                                <div class="input-box tci-box">
+                                    <button style="background-color: brown;" class="btn-def btn2" type="submit">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- Account Area End -->
+{% endblock content %}

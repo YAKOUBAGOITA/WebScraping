@@ -1,0 +1,132 @@
+{% load static %}
+<!-- Start of header area -->
+<header class="header-area header-wrapper">
+    <div class="header-top-bar black-bg clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="login-register-area">
+                        {% if request.user.is_authenticated %}
+                            <p>Hello {{request.user.username}}</p>
+                        {% else %}
+                        <ul>
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sticky-header"  class="header-middle-area">
+        <div class="container">
+            <div class="full-width-mega-dropdown">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2">
+                        <div class="logo ptb-20"><a href="index.html"> <img src="{% static 'images/logo/logo.png' %}" alt="main logo"></a></div>
+                    </div>
+                    <div class="col-md-7 col-sm-10 hidden-xs">
+                        <nav id="primary-menu">
+                            <ul class="main-menu">
+                                <li class="current"><a class="active" href="index.html">Home</a></li>
+                                <li class="mega-parent pos-rltv"><a href="{% url 'shop' %}?q=phones-laptops-headphones">Electronics</a></li>
+                                <li class="mega-parent pos-rltv"><a href="{% url 'shop' %}?q=shoes-trousers-tshirts">Clothings</a></li> 
+                                <li class="mega-parent pos-rltv"><a href="{% url 'shop' %}?q=books">Books</a></li>                                     
+                                <li><a href="#">ABOUT</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-3 hidden-sm hidden-xs">
+                        <div class="search-box global-table">
+                            <div class="global-row">
+                                <div class="global-cell">
+                                    <form method="GET" action="{% url 'shop' %}">
+                                        <div class="input-box">
+                                            <input name="q" class="single-input" placeholder="Search anything" type="text">
+                                            <button class="src-btn"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                
+                    <!-- mobile-menu-area start -->
+                    <div class="mobile-menu-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <nav id="dropdown">
+                                        <ul>
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="shop.html">Man</a>
+                                                <ul class="single-mega-item">
+                                                    <li><a href="shop.html">Shirt 01</a></li>
+                                                    <li><a href="shop.html">Shirt 02</a></li>
+                                                    <li><a href="shop.html">Shirt 03</a></li>
+                                                    <li><a href="shop.html">Shirt 04</a></li>
+                                                    <li><a href="shop.html">Pant 01</a></li>
+                                                    <li><a href="shop.html">Pant 02</a></li>
+                                                    <li><a href="shop.html">Pant 03</a></li>
+                                                    <li><a href="shop.html">Pant 04</a></li>
+                                                    <li><a href="shop.html">T-Shirt 01</a></li>
+                                                    <li><a href="shop.html">T-Shirt 02</a></li>
+                                                    <li><a href="shop.html">T-Shirt 03</a></li>
+                                                    <li><a href="shop.html">T-Shirt 04</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shop.html">Shop</a>
+                                                <ul class="single-mega-item">
+                                                    <li><a href="shop.html">Sharee 01</a></li>
+                                                    <li><a href="shop.html">Sharee 02</a></li>
+                                                    <li><a href="shop.html">Sharee 03</a></li>
+                                                    <li><a href="shop.html">Sharee 04</a></li>
+                                                    <li><a href="shop.html">Sharee 05</a></li>
+                                                    <li><a href="shop.html">Lahenga 01</a></li>
+                                                    <li><a href="shop.html">Lahenga 02</a></li>
+                                                    <li><a href="shop.html">Lahenga 03</a></li>
+                                                    <li><a href="shop.html">Lahenga 04</a></li>
+                                                    <li><a href="shop.html">Lahenga 05</a></li>
+                                                    <li><a href="shop.html">Sandel 01</a></li>
+                                                    <li><a href="shop.html">Sandel 02</a></li>
+                                                    <li><a href="shop.html">Sandel 03</a></li>
+                                                    <li><a href="shop.html">Sandel 04</a></li>
+                                                    <li><a href="shop.html">Sandel 05</a></li>
+                                                </ul>
+                                            </li>
+                                            <li> <a href="#">Pages</a>                                               
+                                                <ul class="single-mega-item coloum-4">
+                                                    <li><a href="about-us.html" target="_blank">About-us</a></li>
+                                                    <li><a href="blog.html" target="_blank">Blog</a></li>
+                                                    <li><a href="blog-right.html" target="_blank">Blog-Right</a></li>
+                                                    <li><a href="single-blog.html" target="_blank">Single Blog</a></li>
+                                                    <li class="menu-title uppercase">pages-02</li>
+                                                    <li><a href="cart.html" target="_blank">Cart</a></li>
+                                                    <li><a href="checkout.html" target="_blank">Checkout</a></li>
+                                                    <li><a href="compare.html" target="_blank">Compare</a></li>
+                                                    <li><a href="complete-order.html" target="_blank">Complete Order</a></li>
+                                                    <li><a href="contact-us.html" target="_blank">Contact US</a></li>
+                                                    <li class="menu-title uppercase">pages-03</li>
+                                                    <li><a href="login.html" target="_blank">Login</a></li>
+                                                    <li><a href="my-account.html" target="_blank">My Account</a></li>
+                                                    <li class="menu-title uppercase">pages-03</li>
+                                                    <li><a href="shop.html" target="_blank">Shop</a></li>
+                                                    <li><a href="single-product.html" target="_blank">Single Prodcut</a></li>
+                                                    <li><a href="wishlist.html" target="_blank">Wishlist</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="about-us.html">about</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile menu area end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End of header area -->
